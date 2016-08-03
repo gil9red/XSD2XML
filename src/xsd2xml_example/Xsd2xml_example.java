@@ -12,6 +12,7 @@ import jlibs.xml.sax.XMLDocument;
 import jlibs.xml.xsd.XSInstance;
 import jlibs.xml.xsd.XSParser;
 import org.apache.xerces.xs.XSModel;
+import org.apache.xmlbeans.XmlObject;
 
 
 /**
@@ -75,6 +76,8 @@ public class Xsd2xml_example {
         
         System.out.println();
         System.out.println("Xml:");
-        System.out.println(outWriter.getBuffer().toString());
+        String xmlString = outWriter.getBuffer().toString();
+        // Только ради правильных отступов
+        System.out.println(XmlObject.Factory.parse(xmlString));
     }
 }

@@ -1,40 +1,42 @@
-<xs:schema targetNamespace="http://tempuri.org/po.xsd" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/po.xsd">
-  <xs:element name="Root">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="Items_1">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Item" type="Item" minOccurs="0" maxOccurs="unbounded"/>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:complexType name="Item">
-    <xs:sequence>
-      <xs:element name="quantity">
-        <xs:simpleType>
-          <xs:restriction base="xs:positiveInteger">
-            <xs:maxExclusive value="100"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="quantity2">
-        <xs:simpleType>
-          <xs:restriction base="xs:decimal"/>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="mountainbikesize">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="small"/>
-            <xs:enumeration value="medium"/>
-            <xs:enumeration value="large"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-    </xs:sequence>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="person">
+  <xs:complexType>
+    <xs:choice>
+      <xs:element name="employee" type="Employee"/>
+      <xs:element name="member" type="Member"/>
+    </xs:choice>
   </xs:complexType>
+</xs:element> 
+
+<xs:complexType name="Employee">
+  <xs:sequence>
+    <xs:element name="name" type="xs:string"/>
+    <xs:element name="age" type="xs:int"/>
+    <xs:element name="hobby">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element name="cpp" type="xs:string"/>
+            <xs:element name="java" type="xs:string"/>
+            <xs:element name="c_sharp" type="xs:string"/>
+            <xs:element name="other">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="lang" type="xs:string" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+  </xs:element> 
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Member">
+  <xs:sequence>
+    <xs:element name="fio" type="xs:string"/>
+    <xs:element name="weight" type="xs:int"/>
+  </xs:sequence>
+</xs:complexType>
+
 </xs:schema>

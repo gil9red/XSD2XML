@@ -48,7 +48,7 @@ Generation xml from xsd (#java #jlibs #xsd #xml)
 ```
 
 ### Xml
-```
+```xml
 <!--(employee | member)-->
 <person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <member>

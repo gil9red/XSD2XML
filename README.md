@@ -53,24 +53,24 @@ Generation xml from xsd (#java #jlibs #xsd #xml)
 ```xml
 <!--(employee | member)-->
 <person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <member birthday="2016-08-04">
-    <fio>fio1</fio>
-    <weight>432894162</weight>
-  </member>
-  <employee checked="false">
-    <name>name1</name>
-    <age>1072568470</age>
-    <!--(cpp | java | c_sharp | other)-->
-    <hobby>
-      <cpp>cpp1</cpp>
-      <c_sharp>c_sharp1</c_sharp>
-      <java>java1</java>
-      <!--(lang+)-->
-      <other>
-        <lang>lang1</lang>
-        <lang>lang2</lang>
-      </other>
-    </hobby>
-  </employee>
+    <member birthday="2016-08-04">
+        <fio>fio1</fio>
+        <weight>432894162</weight>
+    </member>
+    <employee checked="false">
+        <name>name1</name>
+        <age>1072568470</age>
+        <!--(cpp | java | c_sharp | other)-->
+        <hobby>
+            <cpp>cpp1</cpp>
+            <c_sharp>c_sharp1</c_sharp>
+            <java>java1</java>
+            <!--(lang+)-->
+            <other>
+                <lang>lang1</lang>
+                <lang>lang2</lang>
+            </other>
+        </hobby>
+    </employee>
 </person>
 ```
